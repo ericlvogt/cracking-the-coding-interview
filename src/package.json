@@ -1,6 +1,13 @@
 {
   "dependencies": {
-    "eslint": "^8.25.0",
     "mocha": "^10.0.0"
-  }
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-google": "^0.14.0"
+  },
+  "scripts": {
+    "test": "mocha test/arrays-and-strings.test.js"
+  },
+  "type": "module"
 }
