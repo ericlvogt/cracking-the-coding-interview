@@ -1,6 +1,6 @@
 'use-strict';
 
-/** @class Chapter 1 Arrays and Strings. */
+/** @class Chapter 1 Arrays and Strings */
 export class ArraysAndStrings {
   /**
    * 1.1
