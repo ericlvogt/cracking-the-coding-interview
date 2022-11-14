@@ -1,17 +1,21 @@
 'use-strict';
 
 /** @class Linked list implementation from Cracking the coding interview */
-export class LinkedListNode {
-  constructor(next) {
-    this.next = next;
+export class LinkedList {
+  next;
+  item;
+  constructor(item) {
+    this.item = item;
   }
+
   /**
      *
-     * @param {LinkedListNode} newNode
+     * @param {object} item
      */
-  appendToEnd(newNode) {
+  appendToEnd(item) {
+    let newNode = new LinkedList(item);
     let node = this;
-    while (node.next != null) {
+    while (node.next !== undefined) {
       node = node.next;
     }
     node.next = newNode;

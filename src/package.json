@@ -7,7 +7,14 @@
     "eslint-config-google": "^0.14.0"
   },
   "scripts": {
-    "test": "mocha test/arrays-and-strings.test.js"
+    "test": "node ./node_modules/mocha/bin/mocha *.test/*.test.js"
   },
-  "type": "module"
+  "type": "module",
+  "name": "src",
+  "version": "1.0.0",
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

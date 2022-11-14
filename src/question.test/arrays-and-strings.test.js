@@ -17,15 +17,15 @@ const allCharacters = getAllCharacters();
 
 describe('ArraysAndStrings', function() {
   describe('#allUniqueCharacters', function() {
-    it('should return true for empty string', function() {
+    it('should return true for an empty string', function() {
       const result = arraysAndStrings.allUniqueCharacters('');
       assert.strictEqual(result, true);
     });
-    it('should return true for unique string', function() {
+    it('should return true for a unique string', function() {
       const result = arraysAndStrings.allUniqueCharacters(allCharacters);
       assert.strictEqual(result, true);
     });
-    it('should return false for duplicate char', function() {
+    it('should return false for duplicate characters', function() {
       let test = allCharacters;
       test += 'a';
       const result = arraysAndStrings.allUniqueCharacters(test);
@@ -33,15 +33,15 @@ describe('ArraysAndStrings', function() {
     });
   });
   describe('#allUniqueCharactersNoAdditionalDataStructures', function() {
-    it('should return true for empty string', function() {
+    it('should return true for an empty string', function() {
       const result = arraysAndStrings.allUniqueCharactersNoAdditionalDataStructures('');
       assert.strictEqual(result, true);
     });
-    it('should return true for unique string', function() {
+    it('should return true for a unique string', function() {
       const result = arraysAndStrings.allUniqueCharactersNoAdditionalDataStructures(allCharacters);
       assert.strictEqual(result, true);
     });
-    it('should return false for duplicate char', function() {
+    it('should return false for duplicate characters', function() {
       let test = allCharacters;
       test += 'a';
       const result = arraysAndStrings.allUniqueCharactersNoAdditionalDataStructures(test);
