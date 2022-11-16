@@ -8,10 +8,10 @@ export class LinkedLists {
    * 2.1
    * Write code to remove duplicates from an unsorted linked list
    * @method
-   * @param {LinkedList} value
-   * @returns
+   * @param {LinkedList} list 
+   * @returns {LinkedList}
    */
-  removeDuplicates(value) {
-    return value;
+  removeDuplicates(list) {
+    return list;
   };
 }
