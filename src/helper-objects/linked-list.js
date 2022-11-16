@@ -6,6 +6,16 @@ export class LinkedList {
   value;
 
   /**
+   * 
+   * @param {[]} list 
+   */
+  constructor(list = []){
+    for(let item of list){
+      this.appendToEnd(item);
+    }
+  }
+
+  /**
      *
      * @param {object} value
      */

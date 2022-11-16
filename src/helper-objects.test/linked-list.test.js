@@ -4,6 +4,22 @@ import {LinkedList} from '../helper-objects/linked-list.js';
 import assert from 'node:assert';
 
 describe('LinkedList', function() {
+    describe('#constructor', function(){
+        it('should create from empty list', function(){
+            const list = [];
+            const actual = new LinkedList(list);
+            assert.strictEqual(actual.length, list.length);
+        });
+        it('should create from list', function(){
+            const list = ['a', 2, 22, 'c'];
+            const actual = new LinkedList(list);
+            assert.strictEqual(actual.length, list.length);
+            assert.strictEqual(actual.value, list[0]);
+            assert.strictEqual(actual.next.value, list[1]);
+            assert.strictEqual(actual.next.next.value, list[2]);
+            assert.strictEqual(actual.next.next.next.value, list[3]);
+        });
+    });
     describe('#appendToEnd', function() {
       it('should append item to end of list', function() {
         const first = 'first';

@@ -12,6 +12,12 @@ export class LinkedLists {
    * @returns {LinkedList}
    */
   removeDuplicates(list) {
-    return list;
+    let uniqueValues = [];
+    for(let node = list; node !== undefined; node = node.next){
+      if(node.value !== undefined && !uniqueValues.includes(node.value)){
+        uniqueValues.push(node.value);
+      }
+    }
+    return new LinkedList(uniqueValues);
   };
 }
