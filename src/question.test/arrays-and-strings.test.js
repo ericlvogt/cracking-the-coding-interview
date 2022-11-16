@@ -34,17 +34,18 @@ describe('ArraysAndStrings', function() {
   });
   describe('#allUniqueCharactersNoAdditionalDataStructures', function() {
     it('should return true for an empty string', function() {
-      const result = arraysAndStrings.allUniqueCharactersNoAdditionalDataStructures('');
+      const result = arraysAndStrings.allUniqueCharactersNoDataStructures('');
       assert.strictEqual(result, true);
     });
     it('should return true for a unique string', function() {
-      const result = arraysAndStrings.allUniqueCharactersNoAdditionalDataStructures(allCharacters);
+      const result = arraysAndStrings.allUniqueCharactersNoDataStructures(
+          allCharacters);
       assert.strictEqual(result, true);
     });
     it('should return false for duplicate characters', function() {
       let test = allCharacters;
       test += 'a';
-      const result = arraysAndStrings.allUniqueCharactersNoAdditionalDataStructures(test);
+      const result = arraysAndStrings.allUniqueCharactersNoDataStructures(test);
       assert.strictEqual(result, false);
     });
   });

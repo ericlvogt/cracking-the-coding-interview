@@ -1,16 +1,18 @@
 'use-strict';
 
-/** @class Linked list implementation from Cracking the coding interview */
+/**
+ * Linked list implementation from Cracking the coding interview
+ */
 export class LinkedList {
   next;
   value;
 
   /**
-   * 
-   * @param {[]} list 
+   *
+   * @param {[]} list
    */
-  constructor(list = []){
-    for(let item of list){
+  constructor(list = []) {
+    for (const item of list) {
       this.appendToEnd(item);
     }
   }
@@ -20,11 +22,11 @@ export class LinkedList {
      * @param {object} value
      */
   appendToEnd(value) {
-    if(value === undefined){
-      throw 'cannot add value undefined to linked list';
+    if (value === undefined) {
+      throw new Error('cannot add value undefined to linked list');
     }
 
-    if(this.value === undefined){
+    if (this.value === undefined) {
       this.value = value;
       return;
     }
@@ -35,13 +37,16 @@ export class LinkedList {
     this.next.appendToEnd(value);
   }
 
-  get length(){
+  /**
+   *
+   */
+  get length() {
     let result = 0;
-    if (this.value !== undefined){
+    if (this.value !== undefined) {
       result++;
     }
     let node = this.next;
-    while(node !== undefined){
+    while (node !== undefined) {
       node = node.next;
       result++;
     }

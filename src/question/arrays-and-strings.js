@@ -1,6 +1,6 @@
 'use-strict';
 
-/** @class Chapter 1 Arrays and Strings */
+/** Chapter 1 Arrays and Strings */
 export class ArraysAndStrings {
   /**
    * 1.1
@@ -41,7 +41,7 @@ export class ArraysAndStrings {
    * @param {string} value
    * @returns
    */
-  allUniqueCharactersNoAdditionalDataStructures(value) {
+  allUniqueCharactersNoDataStructures(value) {
     // don't need to run for the last index
     for (let i = 0; i < value.length - 1; i++) {
       // don't need to run for values already compared
