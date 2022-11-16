@@ -3,21 +3,38 @@
 /** @class Linked list implementation from Cracking the coding interview */
 export class LinkedList {
   next;
-  item;
-  constructor(item) {
-    this.item = item;
-  }
+  value;
 
   /**
      *
-     * @param {object} item
+     * @param {object} value
      */
-  appendToEnd(item) {
-    let newNode = new LinkedList(item);
-    let node = this;
-    while (node.next !== undefined) {
-      node = node.next;
+  appendToEnd(value) {
+    if(value === undefined){
+      throw 'cannot add value undefined to linked list';
     }
-    node.next = newNode;
+
+    if(this.value === undefined){
+      this.value = value;
+      return;
+    }
+
+    if (this.next === undefined) {
+      this.next = new LinkedList();
+    }
+    this.next.appendToEnd(value);
+  }
+
+  get length(){
+    let result = 0;
+    if (this.value !== undefined){
+      result++;
+    }
+    let node = this.next;
+    while(node !== undefined){
+      node = node.next;
+      result++;
+    }
+    return result;
   }
 }
