@@ -18,7 +18,7 @@ describe('LinkedLists', function() {
     it('should return same list when there are no duplicates', function() {
       const values = [1, 2, 3, 4, 5];
 
-      const linkedList = LinkedList.createFromList(values);
+      const linkedList = new LinkedList(values);
 
       const actual = linkedLists.removeDuplicates(linkedList);
 
@@ -34,7 +34,7 @@ describe('LinkedLists', function() {
       const values = [1, 3, 2, 2, 4, 5, 3, 2];
       const expected = [1, 3, 2, 4, 5];
 
-      const linkedList = LinkedList.createFromList(values);
+      const linkedList = new LinkedList(values);
 
       const actual = linkedLists.removeDuplicates(linkedList);
 

@@ -8,17 +8,20 @@ export class LinkedList {
   next;
   value;
 
-  static createFromList(list){
-    let result = new LinkedList();
+  /**
+   * 
+   * @param {[]} list 
+   * @returns 
+   */
+  constructor (list = []){
     for (const item of list) {
-      result.appendToEnd(item);
+      this.appendToEnd(item);
     }
-    return result;
   }
 
-  static createFromLinkedList(linkedList){
+  clone(){
     let result = new LinkedList();
-    for (let node = linkedList; node !== undefined; node = node.next) {
+    for (let node = this; node !== undefined; node = node.next) {
       result.appendToEnd(node.value);
     }
     return result;

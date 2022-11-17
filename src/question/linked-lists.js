@@ -22,7 +22,7 @@ export class LinkedLists {
         uniqueValues.push(node.value);
       }
     }
-    return LinkedList.createFromList(uniqueValues);
+    return new LinkedList(uniqueValues);
   };
 
   /**
@@ -33,7 +33,7 @@ export class LinkedLists {
    * @return {LinkedList}
    */
    removeDuplicatesNoBuffer(list) {
-    
+    list
     return new LinkedList();
   };
 }
