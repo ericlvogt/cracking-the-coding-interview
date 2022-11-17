@@ -22,6 +22,16 @@ describe('LinkedList', function() {
     });
   });
   describe('#clone', function() {
+    it('should handle empty linked list', function(){
+      const original = new LinkedList();
+      const actual = original.clone();
+      assert.strictEqual(actual.length, 0);
+      
+      const newValue = 'new value';
+      actual.appendToEnd(newValue);
+      assert.strictEqual(actual.length, 1);
+      assert.strictEqual(original.length, 0);
+    });
     it('should return new linked list', function() {
       const list = ['a', 2, 22, 'c'];
       const original = new LinkedList(list);

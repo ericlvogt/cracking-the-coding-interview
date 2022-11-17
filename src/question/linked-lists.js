@@ -33,7 +33,20 @@ export class LinkedLists {
    * @return {LinkedList}
    */
    removeDuplicatesNoBuffer(list) {
-    list
-    return new LinkedList();
+    let result = list.clone();
+    for(let node = result; node !== undefined; node = node.next){
+      for(let nodeToCompare = node; nodeToCompare.next !== undefined; nodeToCompare = nodeToCompare.next){
+        if (node.value === nodeToCompare.next.value){
+          if(nodeToCompare.next.next === undefined){
+            nodeToCompare.next = undefined;
+            break;
+          } else{
+            nodeToCompare.next = nodeToCompare.next.next;
+          }
+          
+        }
+      }
+    }
+    return result;
   };
 }

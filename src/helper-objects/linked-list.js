@@ -21,6 +21,10 @@ export class LinkedList {
 
   clone(){
     let result = new LinkedList();
+    if (this.length === 0){
+      return result;
+    }
+
     for (let node = this; node !== undefined; node = node.next) {
       result.appendToEnd(node.value);
     }
