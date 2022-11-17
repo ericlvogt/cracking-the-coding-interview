@@ -4,24 +4,26 @@
  * Linked list implementation from Cracking the coding interview
  */
 export class LinkedList {
-  
   next;
   value;
 
   /**
-   * 
-   * @param {[]} list 
-   * @returns 
+   *
+   * @param {any[]} list
    */
-  constructor (list = []){
+  constructor(list = []) {
     for (const item of list) {
       this.appendToEnd(item);
     }
   }
 
-  clone(){
-    let result = new LinkedList();
-    if (this.length === 0){
+  /**
+   *
+   * @return {LinkedList}
+   */
+  clone() {
+    const result = new LinkedList();
+    if (this.length === 0) {
       return result;
     }
 

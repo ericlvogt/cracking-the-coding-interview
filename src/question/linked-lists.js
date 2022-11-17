@@ -12,7 +12,7 @@ export class LinkedLists {
    * @return {LinkedList}
    */
   removeDuplicates(list) {
-    if (list.length == 0){
+    if (list.length == 0) {
       return new LinkedList();
     }
 
@@ -27,23 +27,23 @@ export class LinkedLists {
 
   /**
    * 2.1
-   * Write code to remove duplicates from an unsorted linked list without a temporary buffer
+   * Write code to remove duplicates from an unsorted linked list without a
+   * temporary buffer
    * @method
    * @param {LinkedList} list
    * @return {LinkedList}
    */
-   removeDuplicatesNoBuffer(list) {
-    let result = list.clone();
-    for(let node = result; node !== undefined; node = node.next){
-      for(let nodeToCompare = node; nodeToCompare.next !== undefined; nodeToCompare = nodeToCompare.next){
-        if (node.value === nodeToCompare.next.value){
-          if(nodeToCompare.next.next === undefined){
-            nodeToCompare.next = undefined;
+  removeDuplicatesNoBuffer(list) {
+    const result = list.clone();
+    for (let node = result; node !== undefined; node = node.next) {
+      for (let compareNode = node; compareNode.next !== undefined; compareNode = compareNode.next) {
+        if (node.value === compareNode.next.value) {
+          if (compareNode.next.next === undefined) {
+            compareNode.next = undefined;
             break;
-          } else{
-            nodeToCompare.next = nodeToCompare.next.next;
+          } else {
+            compareNode.next = compareNode.next.next;
           }
-          
         }
       }
     }

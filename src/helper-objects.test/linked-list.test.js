@@ -2,7 +2,6 @@
 
 import {LinkedList} from '../helper-objects/linked-list.js';
 import assert from 'node:assert';
-import { link } from 'node:fs';
 
 describe('LinkedList', function() {
   describe('#constructor', function() {
@@ -22,11 +21,11 @@ describe('LinkedList', function() {
     });
   });
   describe('#clone', function() {
-    it('should handle empty linked list', function(){
+    it('should handle empty linked list', function() {
       const original = new LinkedList();
       const actual = original.clone();
       assert.strictEqual(actual.length, 0);
-      
+
       const newValue = 'new value';
       actual.appendToEnd(newValue);
       assert.strictEqual(actual.length, 1);
@@ -46,10 +45,10 @@ describe('LinkedList', function() {
       actual.appendToEnd(newValue);
       assert.strictEqual(actual.length, list.length + 1);
       assert.strictEqual(original.length, list.length);
-      
+
       const differentValue = 'different value';
       actual.value = differentValue;
-      assert.strictEqual(actual.value, differentValue); 
+      assert.strictEqual(actual.value, differentValue);
       assert.strictEqual(original.value, list[0]);
     });
   });
