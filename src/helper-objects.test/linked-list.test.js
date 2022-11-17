@@ -12,7 +12,17 @@ describe('LinkedList', function() {
     });
     it('should create from list', function() {
       const list = ['a', 2, 22, 'c'];
-      const actual = new LinkedList(list);
+      const actual = LinkedList.createFromList(list);
+      assert.strictEqual(actual.length, list.length);
+      assert.strictEqual(actual.value, list[0]);
+      assert.strictEqual(actual.next.value, list[1]);
+      assert.strictEqual(actual.next.next.value, list[2]);
+      assert.strictEqual(actual.next.next.next.value, list[3]);
+    });
+    it('should create from linked list', function() {
+      const list = ['a', 2, 22, 'c'];
+      const linkedList = LinkedList.createFromList(list);
+      const actual = LinkedList.createFromLinkedList(linkedList);
       assert.strictEqual(actual.length, list.length);
       assert.strictEqual(actual.value, list[0]);
       assert.strictEqual(actual.next.value, list[1]);
@@ -57,7 +67,7 @@ describe('LinkedList', function() {
     });
     it('should return number of values in list', function() {
       const values = [1, 2];
-      const linkedList = new LinkedList(values);
+      const linkedList = LinkedList.createFromList(values);
       assert.strictEqual(linkedList.length, values.length);
     });
   });

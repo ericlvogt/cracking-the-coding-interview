@@ -4,17 +4,24 @@
  * Linked list implementation from Cracking the coding interview
  */
 export class LinkedList {
+  
   next;
   value;
 
-  /**
-   *
-   * @param {[]} list
-   */
-  constructor(list = []) {
+  static createFromList(list){
+    let result = new LinkedList();
     for (const item of list) {
-      this.appendToEnd(item);
+      result.appendToEnd(item);
     }
+    return result;
+  }
+
+  static createFromLinkedList(linkedList){
+    let result = new LinkedList();
+    for (let node = linkedList; node !== undefined; node = node.next) {
+      result.appendToEnd(node.value);
+    }
+    return result;
   }
 
   /**
