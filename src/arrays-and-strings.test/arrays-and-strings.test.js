@@ -1,6 +1,6 @@
 'use-strict';
 
-import StringHelper from '../arrays-and-strings/arrays-and-strings.js';
+import StringHelper from '../arrays-and-strings/all-unique-characters.js';
 import assert from 'node:assert';
 
 const getAllCharacters = () => {
