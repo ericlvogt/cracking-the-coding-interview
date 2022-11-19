@@ -1,7 +1,7 @@
 'use-strict';
 
-import {LinkedList} from '../helper-objects/linked-list.js';
-import {LinkedLists} from '../question/linked-lists.js';
+import {LinkedList} from '../linked-lists/linked-list.js';
+import {LinkedLists} from '../linked-lists/linked-lists.js';
 import assert from 'node:assert';
 
 const linkedLists = new LinkedLists();

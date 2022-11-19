@@ -1,6 +1,6 @@
 'use-strict';
 
-import {LinkedList} from '../helper-objects/linked-list.js';
+import {LinkedList} from '../linked-lists/linked-list.js';
 import assert from 'node:assert';
 
 describe('LinkedList', function() {

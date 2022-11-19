@@ -1,6 +1,6 @@
 'use-strict';
 
-import {ArraysAndStrings} from '../question/arrays-and-strings.js';
+import {ArraysAndStrings} from '../arrays-and-strings/arrays-and-strings.js';
 import assert from 'node:assert';
 
 const arraysAndStrings = new ArraysAndStrings();

@@ -1,6 +1,6 @@
 'use-strict';
 
-import {LinkedList} from '../helper-objects/linked-list.js';
+import {LinkedList} from './linked-list.js';
 
 /** Chapter 2 Linked Lists */
 export class LinkedLists {
