@@ -1,9 +1,7 @@
 'use-strict';
 
-import {ArraysAndStrings} from '../arrays-and-strings/arrays-and-strings.js';
+import StringHelper from '../arrays-and-strings/arrays-and-strings.js';
 import assert from 'node:assert';
-
-const arraysAndStrings = new ArraysAndStrings();
 
 const getAllCharacters = () => {
   let result = '';
@@ -18,34 +16,34 @@ const allCharacters = getAllCharacters();
 describe('ArraysAndStrings', function() {
   describe('#allUniqueCharacters', function() {
     it('should return true for an empty string', function() {
-      const result = arraysAndStrings.allUniqueCharacters('');
+      const result = StringHelper.allUniqueCharacters('');
       assert.strictEqual(result, true);
     });
     it('should return true for a unique string', function() {
-      const result = arraysAndStrings.allUniqueCharacters(allCharacters);
+      const result = StringHelper.allUniqueCharacters(allCharacters);
       assert.strictEqual(result, true);
     });
     it('should return false for duplicate characters', function() {
       let test = allCharacters;
       test += 'a';
-      const result = arraysAndStrings.allUniqueCharacters(test);
+      const result = StringHelper.allUniqueCharacters(test);
       assert.strictEqual(result, false);
     });
   });
   describe('#allUniqueCharactersNoAdditionalDataStructures', function() {
     it('should return true for an empty string', function() {
-      const result = arraysAndStrings.allUniqueCharactersNoDataStructures('');
+      const result = StringHelper.allUniqueCharactersNoDataStructures('');
       assert.strictEqual(result, true);
     });
     it('should return true for a unique string', function() {
-      const result = arraysAndStrings.allUniqueCharactersNoDataStructures(
+      const result = StringHelper.allUniqueCharactersNoDataStructures(
           allCharacters);
       assert.strictEqual(result, true);
     });
     it('should return false for duplicate characters', function() {
       let test = allCharacters;
       test += 'a';
-      const result = arraysAndStrings.allUniqueCharactersNoDataStructures(test);
+      const result = StringHelper.allUniqueCharactersNoDataStructures(test);
       assert.strictEqual(result, false);
     });
   });
