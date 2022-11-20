@@ -1,7 +1,7 @@
 'use-strict';
 
 import {LinkedList} from '../linked-lists/linked-list.js';
-import {LinkedLists} from '../linked-lists/linked-lists.js';
+import {LinkedLists} from '../linked-lists/remove-duplicates.js';
 import assert from 'node:assert';
 
 const linkedLists = new LinkedLists();
