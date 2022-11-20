@@ -14,7 +14,7 @@
  * @param {string} value
  * @returns
  */
-function allUniqueCharacters(value) {
+const allUniqueCharacters = (value) => {
   const uniqueCharacters = [];
   for (let i = 0; i < value.length; i++) {
     const character = value.charAt(i);
@@ -39,7 +39,7 @@ function allUniqueCharacters(value) {
  * @param {string} value
  * @returns
  */
-function allUniqueCharactersNoDataStructures(value) {
+ const allUniqueCharactersNoDataStructures = (value) => {
   // don't need to run for the last index
   for (let i = 0; i < value.length - 1; i++) {
     // don't need to run for values already compared

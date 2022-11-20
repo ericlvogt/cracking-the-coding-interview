@@ -7,7 +7,7 @@ import {LinkedList} from './linked-list.js';
  * Write code to remove duplicates from an unsorted linked list without a
  * temporary buffer
  */
-function removeDuplicates(list) {
+const removeDuplicates = (list) => {
   if (list.length == 0) {
     return new LinkedList();
   }
@@ -26,7 +26,7 @@ function removeDuplicates(list) {
  * Write code to remove duplicates from an unsorted linked list without a
  * temporary buffer
  */
-function removeDuplicatesNoBuffer(list) {
+const removeDuplicatesNoBuffer = (list) => {
   const result = list.clone();
   for (let node of result) {
     for (let compareNode = node; compareNode.next !== undefined; compareNode = compareNode.next) {
