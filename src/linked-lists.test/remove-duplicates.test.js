@@ -1,17 +1,15 @@
 'use-strict';
 
 import {LinkedList} from '../linked-lists/linked-list.js';
-import {LinkedLists} from '../linked-lists/remove-duplicates.js';
+import LinkedListHelper from '../linked-lists/remove-duplicates.js';
 import assert from 'node:assert';
-
-const linkedLists = new LinkedLists();
 
 describe('LinkedLists', function() {
   describe('#removeDuplicates', function() {
     it('should return same list when empty', function() {
       const linkedList = new LinkedList();
 
-      const actual = linkedLists.removeDuplicates(linkedList);
+      const actual = LinkedListHelper.removeDuplicates(linkedList);
 
       assert.strictEqual(actual.length, 0);
     });
@@ -20,7 +18,7 @@ describe('LinkedLists', function() {
 
       const linkedList = new LinkedList(values);
 
-      const actual = linkedLists.removeDuplicates(linkedList);
+      const actual = LinkedListHelper.removeDuplicates(linkedList);
 
       assert.strictEqual(actual.length, values.length);
 
@@ -36,7 +34,7 @@ describe('LinkedLists', function() {
 
       const linkedList = new LinkedList(values);
 
-      const actual = linkedLists.removeDuplicates(linkedList);
+      const actual = LinkedListHelper.removeDuplicates(linkedList);
 
       assert.strictEqual(actual.length, expected.length);
 
@@ -51,7 +49,7 @@ describe('LinkedLists', function() {
     it('should return same list when empty', function() {
       const linkedList = new LinkedList();
 
-      const actual = linkedLists.removeDuplicatesNoBuffer(linkedList);
+      const actual = LinkedListHelper.removeDuplicatesNoBuffer(linkedList);
 
       assert.strictEqual(actual.length, 0);
     });
@@ -60,7 +58,7 @@ describe('LinkedLists', function() {
 
       const linkedList = new LinkedList(values);
 
-      const actual = linkedLists.removeDuplicatesNoBuffer(linkedList);
+      const actual = LinkedListHelper.removeDuplicatesNoBuffer(linkedList);
 
       assert.strictEqual(actual.length, values.length);
 
@@ -76,7 +74,7 @@ describe('LinkedLists', function() {
 
       const linkedList = new LinkedList(values);
 
-      const actual = linkedLists.removeDuplicatesNoBuffer(linkedList);
+      const actual = LinkedListHelper.removeDuplicatesNoBuffer(linkedList);
 
       assert.strictEqual(actual.length, expected.length);
 

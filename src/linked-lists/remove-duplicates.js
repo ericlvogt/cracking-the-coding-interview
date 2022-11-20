@@ -2,51 +2,45 @@
 
 import {LinkedList} from './linked-list.js';
 
-/** Chapter 2 Linked Lists */
-export class LinkedLists {
-  /**
-   * 2.1
-   * Write code to remove duplicates from an unsorted linked list
-   * @method
-   * @param {LinkedList} list
-   * @return {LinkedList}
-   */
-  removeDuplicates(list) {
-    if (list.length == 0) {
-      return new LinkedList();
-    }
+/**
+ * 2.1
+ * Write code to remove duplicates from an unsorted linked list without a
+ * temporary buffer
+ */
+function removeDuplicates(list) {
+  if (list.length == 0) {
+    return new LinkedList();
+  }
 
-    const uniqueValues = [];
-    for (let node of list) {
-      if (!uniqueValues.includes(node.value)) {
-        uniqueValues.push(node.value);
-      }
+  const uniqueValues = [];
+  for (let node of list) {
+    if (!uniqueValues.includes(node.value)) {
+      uniqueValues.push(node.value);
     }
-    return new LinkedList(uniqueValues);
-  };
+  }
+  return new LinkedList(uniqueValues);
+};
 
-  /**
-   * 2.1
-   * Write code to remove duplicates from an unsorted linked list without a
-   * temporary buffer
-   * @method
-   * @param {LinkedList} list
-   * @return {LinkedList}
-   */
-  removeDuplicatesNoBuffer(list) {
-    const result = list.clone();
-    for (let node of result) {
-      for (let compareNode = node; compareNode.next !== undefined; compareNode = compareNode.next) {
-        if (node.value === compareNode.next.value) {
-          if (compareNode.next.next === undefined) {
-            compareNode.next = undefined;
-            break;
-          } else {
-            compareNode.next = compareNode.next.next;
-          }
+/**
+ * 2.1
+ * Write code to remove duplicates from an unsorted linked list without a
+ * temporary buffer
+ */
+function removeDuplicatesNoBuffer(list) {
+  const result = list.clone();
+  for (let node of result) {
+    for (let compareNode = node; compareNode.next !== undefined; compareNode = compareNode.next) {
+      if (node.value === compareNode.next.value) {
+        if (compareNode.next.next === undefined) {
+          compareNode.next = undefined;
+          break;
+        } else {
+          compareNode.next = compareNode.next.next;
         }
       }
     }
-    return result;
-  };
-}
+  }
+  return result;
+};
+
+export default { removeDuplicates, removeDuplicatesNoBuffer };
