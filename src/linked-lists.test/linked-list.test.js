@@ -88,7 +88,7 @@ describe('LinkedList', function() {
       assert.strictEqual(linkedList.length, 1);
     });
     it('should return number of values in list', function() {
-      const values = [1, 2];
+      const values = [1, 2, 5, 32, 'ads'];
       const linkedList = new LinkedList(values);
       assert.strictEqual(linkedList.length, values.length);
     });

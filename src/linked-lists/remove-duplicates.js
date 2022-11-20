@@ -17,7 +17,7 @@ export class LinkedLists {
     }
 
     const uniqueValues = [];
-    for (let node = list; node !== undefined; node = node.next) {
+    for (let node of list) {
       if (!uniqueValues.includes(node.value)) {
         uniqueValues.push(node.value);
       }
@@ -35,7 +35,7 @@ export class LinkedLists {
    */
   removeDuplicatesNoBuffer(list) {
     const result = list.clone();
-    for (let node = result; node !== undefined; node = node.next) {
+    for (let node of result) {
       for (let compareNode = node; compareNode.next !== undefined; compareNode = compareNode.next) {
         if (node.value === compareNode.next.value) {
           if (compareNode.next.next === undefined) {

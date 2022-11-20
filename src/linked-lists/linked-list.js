@@ -17,6 +17,28 @@ export class LinkedList {
     }
   }
 
+  [Symbol.iterator](){
+    let node;
+    let firstNode = this;
+    return {
+      next(){
+        if(!firstNode.value){
+          return {value: undefined, done: true};
+        }
+        if(!node){
+          node = firstNode;
+          return {value: node, done: false};
+        }
+        if(node.next){
+          node = node.next;
+          return {value: node, done: false};
+        }
+        return {value: node, done: true};
+      }
+
+    }
+  }
+
   /**
    *
    * @return {LinkedList}
@@ -26,8 +48,8 @@ export class LinkedList {
     if (this.length === 0) {
       return result;
     }
-
-    for (let node = this; node !== undefined; node = node.next) {
+    
+    for (let node of this){
       result.appendToEnd(node.value);
     }
     return result;
@@ -58,12 +80,7 @@ export class LinkedList {
    */
   get length() {
     let result = 0;
-    if (this.value !== undefined) {
-      result++;
-    }
-    let node = this.next;
-    while (node !== undefined) {
-      node = node.next;
+    for (let node of this){
       result++;
     }
     return result;
