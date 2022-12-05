@@ -4,17 +4,22 @@
  * Describe how you could use a single array to implement 3 stacks
  */
 export class SingleArrayStack {
-    constructor (size, numberOfStacks){
-        this._stack = [size];
-        sizeOfStack = Math.floor(size / numberOfStacks);
-        if (sizeOfStack === 0){
-            throw new Error(`Size of stack is too small for ${numberOfStacks}`);
-        }
-        this._stackHeads = [numberOfStacks];
-        this._stackBases = [numberOfStacks];
+    #stack
+    #stackHeads
+    #stackBases
+
+    /**
+     * 
+     * @param {number} sizeOfStack 
+     * @param {number} numberOfStacks 
+     */
+    constructor (sizeOfStack, numberOfStacks){
+        this.#stack = Array(sizeOfStack * numberOfStacks);
+        this.#stackHeads = Array(numberOfStacks);
+        this.#stackBases = Array(numberOfStacks);
         for (let i = 0; i < numberOfStacks; i++){
-            this._stackBases[i] = i * sizeOfStack;
-            this._stackHeads[i] = this._stackBases[i];
+            this.#stackBases[i] = i * sizeOfStack;
+            this.#stackHeads[i] = this.#stackBases[i];
         }
     }
 
@@ -22,8 +27,8 @@ export class SingleArrayStack {
         if (this.isEmpty(index)){
             throw new Error('Stack is empty');
         }
-        let result = this._stack[this._stackHeads[index]];
-        this._stackHeads[index]--;
+        this.#stackHeads[index]--;
+        let result = this.#stack[this.#stackHeads[index]];
         return result;
     }
 
@@ -31,28 +36,28 @@ export class SingleArrayStack {
         if (this.isFull(index)){
             throw new Error('Stack is full');
         }
-        this._stack[this._stackHeads[index]] = value;
-        this._stackHeads[index]++;
+        this.#stack[this.#stackHeads[index]] = value;
+        this.#stackHeads[index]++;
     }
 
     peek(index) {
-        return this._stack[this._stackHeads[index]];
+        //head points to index after last entered
+        return this.#stack[this.#stackHeads[index] - 1];
     }
 
     isEmpty(index) {
-        return this._stackHeads[index] === this._stackBases[index]
+        return this.#stackHeads[index] === this.#stackBases[index]
     }
 
     isFull(index){
         let nextStackBase;
-        if (index + 1 > this._stackHeads.length){
+        if (index + 1 > this.#stackHeads.length){
             throw new Error('Index out of range');
+        } else if(index + 1 === this.#stackHeads.length){
+            nextStackBase = this.#stack.length;
+        } else {
+            nextStackBase = this.#stackBases[index + 1];
         }
-        else if(index + 1 === this._stackHeads.length){
-            nextStackBase = this._stack.length;
-        } else if (this._stackHeads[index] ){
-            nextStackBase = this._stackBases[index + 1];
-        }
-        return this._stackHeads[index] >= nextStackBase;
+        return this.#stackHeads[index] === nextStackBase;
     }
 }

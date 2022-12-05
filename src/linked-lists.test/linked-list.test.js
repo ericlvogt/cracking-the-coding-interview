@@ -3,14 +3,14 @@
 import {LinkedList} from '../linked-lists/linked-list.js';
 import assert from 'node:assert';
 
-describe('LinkedList', function() {
-  describe('#constructor', function() {
-    it('should create from empty list', function() {
+describe('LinkedList', () => {
+  describe('#constructor', () => {
+    it('should create from empty list', () => {
       const list = [];
       const actual = new LinkedList(list);
       assert.strictEqual(actual.length, list.length);
     });
-    it('should create from list', function() {
+    it('should create from list', () => {
       const list = ['a', 2, 22, 'c'];
       const actual = new LinkedList(list);
       assert.strictEqual(actual.length, list.length);
@@ -20,8 +20,8 @@ describe('LinkedList', function() {
       assert.strictEqual(actual.next.next.next.value, list[3]);
     });
   });
-  describe('#clone', function() {
-    it('should handle empty linked list', function() {
+  describe('#clone', () => {
+    it('should handle empty linked list', () => {
       const original = new LinkedList();
       const actual = original.clone();
       assert.strictEqual(actual.length, 0);
@@ -31,7 +31,7 @@ describe('LinkedList', function() {
       assert.strictEqual(actual.length, 1);
       assert.strictEqual(original.length, 0);
     });
-    it('should return new linked list', function() {
+    it('should return new linked list', () => {
       const list = ['a', 2, 22, 'c'];
       const original = new LinkedList(list);
       const actual = original.clone();
@@ -52,8 +52,8 @@ describe('LinkedList', function() {
       assert.strictEqual(original.value, list[0]);
     });
   });
-  describe('#appendToEnd', function() {
-    it('should append item to end of list', function() {
+  describe('#appendToEnd', () => {
+    it('should append item to end of list', () => {
       const first = 'first';
       const second = 'second';
       const third = 'third';
@@ -77,17 +77,17 @@ describe('LinkedList', function() {
       assert.strictEqual(linkedList.next.next.next, undefined);
     });
   });
-  describe('#length', function() {
-    it('should return 0 if no values have been added', function() {
+  describe('#length', () => {
+    it('should return 0 if no values have been added', () => {
       const linkedList = new LinkedList();
       assert.strictEqual(linkedList.length, 0);
     });
-    it('should return 1 if a value has been added', function() {
+    it('should return 1 if a value has been added', () => {
       const linkedList = new LinkedList();
       linkedList.appendToEnd('first item');
       assert.strictEqual(linkedList.length, 1);
     });
-    it('should return number of values in list', function() {
+    it('should return number of values in list', () => {
       const values = [1, 2, 5, 32, 'ads'];
       const linkedList = new LinkedList(values);
       assert.strictEqual(linkedList.length, values.length);
